@@ -1,0 +1,13 @@
+<div class="login-form">
+    <form [formGroup]="userFormData" (ngSubmit)="login()">
+        <h2 class="text-center">Log in</h2>
+        <div class="form-group">
+            <input type="text" class="form-control" formControlName = "userID"  placeholder="Email Adress"> <br/>
+        </div>
+        <div
+            class="error" *ngIf="showLoginErr">Invalid user Id
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg container" role="button">Submit</button>
+    </form>
+</div>
+

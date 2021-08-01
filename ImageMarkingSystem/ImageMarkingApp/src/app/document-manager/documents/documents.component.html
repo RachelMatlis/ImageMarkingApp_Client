@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+
+  <div class="mb-3 col-6 center">
+    <form [formGroup]="documentFormData" (ngSubmit)="createFile()">
+    <h5 for="formFile">Create New Document:</h5>
+    <input type="text" class="form-control" formControlName = "name" placeholder="Enter File Name">
+    <input class="form-control" type="file" id="formFile" (change)="onFileChange($event)">
+    <button type="submit" class="btn btn-light">Create</button>
+    <div *ngIf="createFileRes">Crated!</div>
+  </form>
+  </div>
+
+  <div class=" mb-3 col-6 center">
+    <h5>Edit Document:</h5>
+    <div>
+      <label>Your Documents</label>
+      <select [(ngModel)]="selectedFile" class="form-select form-select-sm" aria-label=".form-select-sm example">
+        <option *ngFor= "let doc of documentsList" [ngValue]="doc">{{doc.documentName}}</option>
+      </select>
+      <button  type="button" class="btn btn-light" (click)="editDoc()">Edit</button>
+      <button type="button" class="btn btn-light" (click)= "removeDocument()">Remove</button>
+    </div>
+    <div>
+      <label>Your Shared Documents:</label>
+      <select [(ngModel)]="selectedFile" class="form-select form-select-sm" aria-label=".form-select-sm example">
+        <option *ngFor= "let doc of sharedDocumentsList" [ngValue]="doc">{{doc.documentName}}</option>
+      </select>
+      <button  type="button" class="btn btn-light" (click)="editDoc()">Edit</button>
+    </div>
+  </div>
+
+  <div class="mb-3 col-6 center">
+    <h5>Share Document:</h5>
+    <label >Your Documents</label>
+    <select [(ngModel)]="selectedFile" class="form-select form-select-sm" aria-label=".form-select-sm example">
+      <option *ngFor= "let doc of documentsList" [ngValue]="doc">{{doc.documentName}}</option>
+    </select>
+    <form [formGroup]="shareFormData" (ngSubmit)="createShare()">
+      <input type="text" class="form-control" formControlName = "sharedUserID" placeholder="Enter user mail to sher with">
+      <button type="submit" class="btn btn-light">Share</button>
+    </form>
+  </div>
+
+  <div class="mb-3 col-6 center">
+    <h5>Remove Share:</h5>
+    <label>Your Documents:</label>
+    <select [(ngModel)]="selectedFile" class="form-select form-select-sm" aria-label=".form-select-sm example">
+      <option *ngFor= "let doc of documentsList" [ngValue]="doc">{{doc.documentName}}</option>
+    </select>
+    <button  type="button" class="btn btn-light" (click)="removeShare()">Remove</button>
+  </div>
+
+</div>

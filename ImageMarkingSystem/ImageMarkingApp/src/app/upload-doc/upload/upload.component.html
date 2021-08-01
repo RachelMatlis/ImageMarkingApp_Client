@@ -1,0 +1,31 @@
+
+<!--  
+<form [formGroup] = "uploadForm">
+<input
+  style="display: none"
+  type="file" (change)="onFileChange($event)"
+  #fileInput>
+<button (click)="fileInput.click()">Upload</button>
+-->
+
+
+<!--  
+<form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+  <input type="file" (change)="onFileChange($event)"/>
+  <button type="submit">Submit</button>
+</form>
+-->
+
+<div>
+  <p>Crate Document :<p>
+  <form [formGroup]="documentFormData" (ngSubmit)="onSubmit()">
+  <label>Document Name:</label>
+  <input type="text" formControlName = "name"/> 
+  <input type="file" (change)="onFileChange($event)"/><br/>
+  <button type="submit">Submit</button>
+  </form>
+</div>
+<br/>
+<div>
+  <canvas #canvas width="600" height="600" style="border:1px solid #c3c3c3 ; position: absolute;" ></canvas>   
+</div>

@@ -1,0 +1,41 @@
+
+.canvas{
+    position: absolute;
+} 
+
+.canvasContainer {
+    left: 0px;
+    top:120px;
+    width: 600px;
+    height: 700px;
+    border: 1px solid #c3c3c3;
+}
+
+
+.btns{
+    position: absolute;
+    top: 90px;
+}
+
+.markers{
+    position: absolute;
+    top: 135px;
+    left: 1000px;
+    width: 300px;
+    background-color: azure;
+}
+
+.markerBtn{
+    width: 100px;
+}
+
+.editMarkerBtn{
+    width: 100px;
+}
+
+.btn-space {
+    margin-right: 5px;
+}
+
+
+

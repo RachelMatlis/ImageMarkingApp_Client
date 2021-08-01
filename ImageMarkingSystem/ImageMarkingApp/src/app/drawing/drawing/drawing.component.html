@@ -1,0 +1,42 @@
+
+
+<div class="btns">
+    <button #btnEllipse class="btn btn-outline-dark btn-space">Ellipse</button>
+    <button #btnRect class="btn btn-outline-dark btn-space">Rectangle</button>
+    <button #btnClear class="btn btn-outline-dark btn-space">Clear</button>
+    <label class="btn-space">Fill Color:</label>
+    <input class="btn-space" type="color" required [(ngModel)]="value">
+    <button #btnNoFill class="btn btn-outline-dark">No Fill</button><br>
+</div>
+
+<div>
+    <canvas #selectedCanvas width="600" height="700" style="border:1px solid #c3c3c3 ;position: absolute;  top: 135px" ></canvas> 
+    <canvas #shapeDrawCanvas width="600" height="700" style="border:1px solid #c3c3c3 ; position: absolute; top: 135px" ></canvas>   
+    <canvas #freeDrawCanvas width="600" height="700" style="border:1px solid #c3c3c3 ;position: absolute;  top: 135px" ></canvas> 
+</div>
+
+
+<div class="markers">
+    <h2>Markers:</h2>
+    <label> Markers are ordered from the top left position.You can select any marker and <br>
+        change the marker background color or delete the marker:</label>
+        <ul>
+            <li><button (click)="updateMarker()" id="editMarkerBtn" class="editMarkerBtn btn btn-outline-success">Change Fill Color</button></li>
+            <li><button (click)="deleteMarker()" id="editMarkerBtn" class="editMarkerBtn btn btn-outline-danger">Delete</button></li>
+        </ul>
+    <ol>
+        <li *ngFor= "let marker of markersList ;let i = index" >
+            <button (click)= "selectMarker(i)" class=" markerBtn btn btn-outline-dark btn-space" >{{marker.markerType}}</button>
+           <!-- <input class="btn-space" type="color" required value={{markersList[i].markerBackColor}}>-->
+        </li>
+    </ol>
+</div>
+
+<!--This is a comment. Comments are not displayed in the browser-->
+
+
+
+
+
+
+

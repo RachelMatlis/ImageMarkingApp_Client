@@ -1,0 +1,15 @@
+.option{
+    background-color: rgba(116, 226, 226, 0.356);
+    width: 250px;
+}
+
+container{
+    position: relative;
+    top: 25px;
+    
+}
+
+.center{
+    margin: 0 auto
+}
+
